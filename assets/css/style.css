@@ -17,6 +17,9 @@ body{
     width: 450px;
     height: 320px;
     background: linear-gradient(to right,#e8e8e8,#c1c1c1);
+    border: 2px solid #555;
+    display: flex;
+    flex-direction: column;
 }
 .teclado{
     background-color: #403a3a;
@@ -24,15 +27,15 @@ body{
 }
 .botao-linha{
     font-size: 18px;
-    margin: 30px;
+    margin: 15px 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 }
 .botao{
     background-color: #030303;
     color: white;
-    margin-right: 10px;
+    margin-right: 15px;
     padding: 10px 30px;
     box-shadow: 2px 2px 0px rgba(150,150,150,0.8 );
     cursor: pointer;
@@ -40,12 +43,41 @@ body{
 .botao.branco{
     background-color: #fff;
     color: #888;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .botao.corrige{
     background-color: #be3a0a;
     color: #888;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .botao.confirma{
     background-color: #098105;
     color: #888;
+    height: 60px;
+    display: flex;
+    align-items:center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.d-1{
+    flex: 1;
+    display: flex;
+}
+.informaçao{
+    flex: 1;
+}
+.foto{
+    width: 125px;
+    height: 145px;
+    background-color:#098105;
+}
+.d-2{
+    height:50px;
+    font-size: 14px;
+    border-top: 1px solid #000;
+    padding-left: 10px;
 }
