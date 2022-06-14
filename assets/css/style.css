@@ -1,3 +1,14 @@
+@keyframes pisca{
+    0%{
+        opacity:0.2;
+    }
+    50%{
+        opacity:1;
+    }
+    100%{
+        opacity:0.2;
+    }
+}
 * {
     margin: 0;
     box-sizing: border-box;
@@ -20,6 +31,7 @@ body{
     border: 2px solid #555;
     display: flex;
     flex-direction: column;
+    padding: 10px;
 }
 .teclado{
     background-color: #403a3a;
@@ -67,17 +79,63 @@ body{
     flex: 1;
     display: flex;
 }
+
 .informaçao{
     flex: 1;
+    display: flex;
+    flex-direction:column;
 }
-.foto{
-    width: 125px;
-    height: 145px;
-    background-color:#098105;
+.linha-1,
+.linha-2,
+.linha-3 {
+    height: 50px;
+    display:flex;
+    align-items:center;
 }
+.numero {
+    display: inline-block;
+    width: 30px;
+    height: 40px;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 40px;
+    font-size: 25px;
+}
+.pisca {
+    animation-name: pisca;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+.linha-2{
+    justify-content: center;
+}
+.linha-4 {
+    flex: 1;
+    line-height: 30px;
+}
+.foto {
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.d-1-foto{
+   border: 1px solid #000;
+   background-color: #fff;
+   text-align: center;
+   font-size: 16px;
+   width: 100%;
+}
+.d-1-foto img{
+    width: 100%;
+}
+.d-1-foto.small{
+    width: 80%;
+   font-size: 10px;
+}
+
 .d-2{
     height:50px;
     font-size: 14px;
     border-top: 1px solid #000;
-    padding-left: 10px;
 }
