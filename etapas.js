@@ -30,6 +30,7 @@ let etapas = [
                 numero:22,
                 nome:'Jose',
                 partido:'ABC',
+                vice:'Tiago',
                 fotos:[
                     {url:'assets/images/caricatura1.png',legenda:'PREFEITO'},
                     {url:'assets/images/caricatura1.png',legenda:'VICE-PREFEITO',small: true}
@@ -39,6 +40,7 @@ let etapas = [
                 numero:33,
                 nome:'Pedro',
                 partido:'FGH',
+                vice:'Mateus',
                 fotos:[
                     {url:'assets/images/caricatura1.png',legenda:'PREFEITO'},
                     {url:'assets/images/caricatura1.png',legenda:'VICE-PREFEITO',small: true}
