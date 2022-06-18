@@ -19,6 +19,12 @@ body{
     align-items: center;
     font-family: sans-serif;
 }
+.aviso-grande{
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+    animation: pisca 1s infinite;
+}
 .urna{
     display: flex;
     background-color: #dbd5c9;
