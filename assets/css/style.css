@@ -21,8 +21,9 @@ body{
 }
 .aviso-grande{
     font-size: 2em;
-    color: #fff;
+    color: #000;
     text-align: center;
+    margin-top: 10px;
     animation: pisca 1s infinite;
 }
 .urna{
