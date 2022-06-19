@@ -18,7 +18,7 @@ let etapas = [
                 fotos:[
                     {url:'assets/images/caricatura1.png',legenda:'vereador'}
                 ]
-            }
+            },
             
         ]
     },
@@ -45,8 +45,8 @@ let etapas = [
                     {url:'assets/images/caricatura1.png',legenda:'PREFEITO'},
                     {url:'assets/images/caricatura1.png',legenda:'VICE-PREFEITO',small: true}
                 ]
-            }
+            },
             
         ]
     }
-]
+];

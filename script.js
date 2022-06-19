@@ -7,19 +7,21 @@ let numeros = document.querySelector('.linha-3');
 
 let etapaAtual = 0;
 let numero = '';
+let votoBranco = false;
 
 function comecarEtapa() {
     let etapa = etapas[etapaAtual];
     let numerosHtml = '';
+    numero = '';
+    votoBranco = false;
 
-    for(let i=0; i<etapa.numeros;i++) {
-    if(i===0) {
-        numerosHtml +='<div class="numero pisca"></div>'
-        
+    for(let i=0;i<etapa.numeros;i++) {
+        if(i===0) {
+            numerosHtml +='<div class="numero pisca"></div>'
         }else{    
             numerosHtml += '<div class="numero"></div>';
         }
-    };
+    }
     seuVotoPara.style.display = 'none';
     cargo.innerHTML= etapa.titulo;
     descriçao.innerHTML = '';
@@ -45,7 +47,11 @@ function atualizarInterface() {
         aviso.style.display= 'block';
         let fotoHtml = '';
         for(let i in candidato.fotos){
-            fotoHtml +=  `<div class="d-1-foto"><img src=${candidato.fotos[i].url} ><div>${candidato.fotos[i].legenda}</div></div>`;
+            if(candidato.fotos[i].small===true){
+                fotoHtml +=  `<div class="d-1-foto small"><img src=${candidato.fotos[i].url} ><div>${candidato.fotos[i].legenda}</div></div>`;
+            }else{
+                fotoHtml +=  `<div class="d-1-foto"><img src=${candidato.fotos[i].url} ><div>${candidato.fotos[i].legenda}</div></div>`;
+            };
         }
         lateral.innerHTML = fotoHtml;
     }else{
@@ -69,12 +75,37 @@ function clicou(n) {
     }
 };
 function branco() {
-
+    if(numero===''){
+        votoBranco = true;
+        seuVotoPara.style.display = 'block';
+        aviso.style.display= 'block';
+        numeros.innerHTML= '';
+        descriçao.innerHTML ='<div class="aviso-grande">VOTO BRANCO</div>';
+    }else{
+        alert('Para votar em BRANCO, nao deve haver nenhum número.');
+    };
 };
 function corrige() {
-    
+    comecarEtapa();
 };
 function confirma() {
-
+    let etapa = etapas[etapaAtual];
+    let votoConfirmado = false;
+    if(votoBranco===true){
+        votoConfirmado = true;
+        console.log('salvando VOTO BRANCO');
+    }else if(numero.length===etapa.numeros){
+        votoConfirmado = true;
+        console.log(`Salvando voto ${numero}`);
+    };
+    if(votoConfirmado===true){
+        etapaAtual++;
+        if(etapas[etapaAtual] !== undefined){
+            comecarEtapa();
+            
+        }else{  
+            alert('Voto confirmado!');
+        };
+    };
 };
 comecarEtapa();
