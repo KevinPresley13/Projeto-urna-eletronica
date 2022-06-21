@@ -8,7 +8,8 @@ let numeros = document.querySelector('.linha-3');
 let etapaAtual = 0;
 let numero = '';
 let votoBranco = false;
-
+let som1 = new Audio("audio/som-de-urna-eletronica2.mp3");
+let votos =[];
 
 function comecarEtapa() {
     let etapa = etapas[etapaAtual];
@@ -76,6 +77,9 @@ function clicou(n) {
     }
 };
 
+function audio() {
+    som1.play();
+};
 
 function branco() {
     if(numero===''){
@@ -96,10 +100,16 @@ function confirma() {
     let votoConfirmado = false;
     if(votoBranco===true){
         votoConfirmado = true;
-        console.log('salvando VOTO BRANCO');
+        votos.push({
+            etapa: etapas[etapaAtual].titulo,
+            voto: 'branco'
+        });
     }else if(numero.length===etapa.numeros){
         votoConfirmado = true;
-        console.log(`Salvando voto ${numero}`);
+        votos.push({
+            etapa: etapas[etapaAtual].titulo,
+            voto: numero
+        });
     };
     if(votoConfirmado===true){
         etapaAtual++;
@@ -107,6 +117,8 @@ function confirma() {
             comecarEtapa();
         }else{  
             document.querySelector('.tela').innerHTML = '<div class="fim">FIM</div>';
+            audio();
+            console.log(votos);
         };
     };
 };
