@@ -146,3 +146,11 @@ body{
     font-size: 14px;
     border-top: 1px solid #000;
 }
+.fim{
+    font-size: 70px;
+    font-weight: bold;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

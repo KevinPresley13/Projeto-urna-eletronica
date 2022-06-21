@@ -9,6 +9,7 @@ let etapaAtual = 0;
 let numero = '';
 let votoBranco = false;
 
+
 function comecarEtapa() {
     let etapa = etapas[etapaAtual];
     let numerosHtml = '';
@@ -74,6 +75,8 @@ function clicou(n) {
         
     }
 };
+
+
 function branco() {
     if(numero===''){
         votoBranco = true;
@@ -102,9 +105,8 @@ function confirma() {
         etapaAtual++;
         if(etapas[etapaAtual] !== undefined){
             comecarEtapa();
-            
         }else{  
-            alert('Voto confirmado!');
+            document.querySelector('.tela').innerHTML = '<div class="fim">FIM</div>';
         };
     };
 };
